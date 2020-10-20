@@ -3,13 +3,35 @@ export default{
   key: `18650821-54d383092d5458c2872240bef`,
   imageType: `photo`,
   orientation: `horizontal`,
+  q: ``,
+  per_page: 3,
   page: 1,
 
-  getImages(query, perPage){
-    let params = `?image_type=${this.imageType}&orientation=${this.orientation}&q=${query}&page=${this.page}&per_page=${per_page}&key=${this.key}`;
+  getImages(){
+    let params = `?image_type=${this.imageType}&orientation=${this.orientation}&q=${this.q}&page=${this.page}&per_page=${this.per_page}&key=${this.key}`;
     let url = `${this.baseUrl}${params}`;
 
     return fetch(url)
     .then(response => response.json());
+  },
+  setPage() {
+    return this.page += 1;
   }
+
+
+  // get perPage() {
+  //   return this.per_page = val;
+  // },
+  // set perPage(val) {
+  //   return (this.per_page = val);
+  // },
+  // get query(){
+  //   return this.q = val;
+  // },
+  // set query(){
+  //   return this.q = val;
+  // },
+
+
 }
+
