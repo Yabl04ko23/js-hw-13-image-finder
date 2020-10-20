@@ -13,8 +13,7 @@ refs.ul.after(loadMoreBtn);
 refs.input.addEventListener('input', debounce((event)=>{
   refs.ul.innerHTML = '';
   apiService.query = event.target.value;
-  apiService.getImages()
-  .then(d => insertElements(d.hits, imgTemplate, refs.ul));
+  apiService.getImages().then(d => insertElements(d.hits, imgTemplate, refs.ul));
   refs.input.value = '';
   loadMoreBtn.classList.add('loadMoreBtn');
   loadMoreBtn.classList.remove('isHidden');
@@ -22,8 +21,7 @@ refs.input.addEventListener('input', debounce((event)=>{
 
 loadMoreBtn.addEventListener('click', ()=>{
   apiService.setPage();
-  apiService.getImages()
-  .then(d => insertElements(d.hits, imgTemplate, refs.ul));
+  apiService.getImages().then(d => insertElements(d.hits, imgTemplate, refs.ul));
 });
 
 function insertElements(data, template, place){
