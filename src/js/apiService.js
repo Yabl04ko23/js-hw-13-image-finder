@@ -16,22 +16,20 @@ export default{
   },
   setPage() {
     return this.page += 1;
-  }
-
+  },
 
   // get perPage() {
-  //   return this.per_page = val;
+  //   return this.per_page = value;
   // },
-  // set perPage(val) {
-  //   return (this.per_page = val);
-  // },
-  // get query(){
-  //   return this.q = val;
-  // },
-  // set query(){
-  //   return this.q = val;
+  // set perPage(value) {
+  //   return (this.per_page = value);
   // },
 
-
+  get query(){
+    return this.q = value;
+  },
+  set query(value){
+    return this.q = value;
+  }
 }
 
