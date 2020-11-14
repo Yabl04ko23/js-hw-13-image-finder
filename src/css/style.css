@@ -15,7 +15,32 @@ body {
 h1, .search-form{
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   margin: 20px 0px;
+  height: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.search-input {
+  height: 20px;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+#decrement, #increment {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  color: white;
+  font-size: 25px;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+#count {
+  font-size: 25px;
+  margin: 0px 10px;
 }
 
 .gallery {
@@ -58,4 +83,5 @@ h1, .search-form{
   color: #ffffff;
   border: 2px solid white;
   border-radius: 10px;
+  font-size: 20px;
 }

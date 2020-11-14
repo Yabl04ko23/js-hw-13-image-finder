@@ -12,5 +12,5 @@ export default {
       this.count += 1;
       place.textContent = this.count;
     }
-  }
+  },
 }

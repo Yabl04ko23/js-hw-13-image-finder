@@ -1,10 +1,12 @@
+import counter from "./counter";
+
 export default{
   baseUrl: `https://pixabay.com/api/`,
   key: `18650821-54d383092d5458c2872240bef`,
   imageType: `photo`,
   orientation: `horizontal`,
   q: ``,
-  per_page: 3,
+  per_page: ``,
   page: 1,
 
   getImages(){
@@ -18,12 +20,12 @@ export default{
     return this.page += 1;
   },
 
-  // get perPage() {
-  //   return this.per_page = value;
-  // },
-  // set perPage(value) {
-  //   return (this.per_page = value);
-  // },
+  get perPage() {
+    return this.per_page = value;
+  },
+  set perPage(value) {
+    return (this.per_page = value);
+  },
 
   get query(){
     return this.q = value;

@@ -13,6 +13,7 @@ refs.ul.after(loadMoreBtn);
 refs.input.addEventListener('input', debounce((event)=>{
   refs.ul.innerHTML = '';
   apiService.query = event.target.value;
+  apiService.perPage = counter.count;
   apiService.getImages().then(d => insertElements(d.hits, imgTemplate, refs.ul));
   refs.input.value = '';
   loadMoreBtn.classList.add('loadMoreBtn');
@@ -21,6 +22,7 @@ refs.input.addEventListener('input', debounce((event)=>{
 
 loadMoreBtn.addEventListener('click', ()=>{
   apiService.setPage();
+  apiService.perPage = counter.count;
   apiService.getImages().then(d => insertElements(d.hits, imgTemplate, refs.ul));
 });
 
@@ -29,15 +31,15 @@ function insertElements(data, template, place){
   place.insertAdjacentHTML('beforeend', element);
 }
 
-// function getCountOfElements(elem, decrementBtn, incrementBtn){
-//   decrementBtn.addEventListener('click', ()=>{
-//     counter.decrement(elem);
-//   })
-//   incrementBtn.addEventListener('click', ()=>{
-//     counter.increment(elem);
-//   })
+function getCountOfElements(elem, decrementBtn, incrementBtn){
+  decrementBtn.addEventListener('click', ()=>{
+    counter.decrement(elem);
+  });
+  incrementBtn.addEventListener('click', ()=>{
+    counter.increment(elem);
+  });
 
-//   return counter.count;
-// }
+  return counter.count;
+}
 
-// getCountOfElements(refs.count, refs.decrementBtn, refs.incrementBtn)
+getCountOfElements(refs.count, refs.decrementBtn, refs.incrementBtn);
