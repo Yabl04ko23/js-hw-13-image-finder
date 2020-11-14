@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/Yabl04ko23/js-hw-13-image-finder.git"
   },
-  "homepage": "",
+  "homepage": "https://yabl04ko23.github.io/js-hw-13-image-finder/",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
